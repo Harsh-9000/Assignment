@@ -1,0 +1,201 @@
+@font-face {
+    font-family: gothamBold;
+    src: url(public/gotham/Gotham-Bold.otf);
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: gothamBook;
+    src: url(public/gotham/GothamBook.ttf);
+    font-display: fallback;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 936px;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 808px;
+    gap: 40px;
+}
+
+.heading {
+    width: 384px;
+    height: 60px;
+    font-family: gothamBold;
+}
+
+.heading-text {
+    font-size: 48px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 511px;
+    height: 348px;
+    margin: 15px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.title-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 145px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: linear-gradient(180.68deg, rgba(0, 0, 0, 0) -9.3%, rgba(0, 0, 0, 0.59) 48.1%, #000000 99.41%);
+}
+
+.title {
+    font-family: gothamBold;
+    font-weight: 600;
+    font-size: 28px;
+    color: #fffdff;
+    padding: 20px;
+    margin: 0;
+    transition: opacity 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: rgba(60, 76, 136, 0.6);
+    color: #fefefe;
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: width 0.3s ease, height 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-heading {
+    font-family: gothamBold;
+    font-weight: 700;
+    font-size: 32px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s ease 0.2s, transform 0.5s ease 0.2s;
+    text-align: center;
+    margin: 0;
+    padding: 2px 20px;
+}
+
+.description {
+    font-family: gothamBook;
+    font-weight: 400;
+    font-size: 19px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s ease 0.4s, transform 0.7s ease 0.4s;
+    text-align: center;
+    margin: 0;
+    padding: 2px 0px;
+}
+
+.card:hover .title {
+    opacity: 0;
+    margin-bottom: 25px;
+}
+
+.card:hover .overlay {
+    width: 100%;
+    height: 294px;
+}
+
+.card:hover .description-heading {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.blue-color {
+    color: #114a8d;
+}
+
+.yellow-color {
+    color: #ffc758;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        height: auto;
+    }
+
+    section {
+        height: auto;
+        padding: 20px;
+    }
+
+    .heading {
+        width: auto;
+        text-align: center;
+    }
+
+    .heading-text {
+        font-size: 36px;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        margin: 15px 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .description-heading {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}
